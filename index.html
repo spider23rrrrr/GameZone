@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b16">
+  <meta name="description" content="GameZone - العب ألعاب متصفح مجانية وممتعة مباشرة.">
+  <title>GameZone | عالم الألعاب</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">🎮</span> Game<span>Zone</span></a>
+    <nav><a href="#home">الرئيسية</a><a href="#games">الألعاب</a><a href="#about">عن الموقع</a></nav>
+    <a class="top-cta" href="#games">العب الآن <span>↙</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> بوابتك إلى المتعة</div>
+        <h1>اللعب يبدأ<br> <span>من هنا.</span></h1>
+        <p>اكتشف ألعاب متصفح مجانية، وتحدَّ نفسك، واستمتع باللعب مباشرة دون تنزيل.</p>
+        <a class="primary-btn" href="#games">اكتشف الألعاب <span>←</span></a>
+        <div class="hero-stats"><div><b>03</b><small>ألعاب تجريبية</small></div><i></i><div><b>0</b><small>تنزيلات مطلوبة</small></div><i></i><div><b>100%</b><small>لعب من المتصفح</small></div></div>
+      </div>
+      <div class="hero-art" aria-label="رسم توضيحي لوحدة تحكم ألعاب">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="glow"></div><div class="controller">🎮</div>
+        <span class="float-tag tag-one">PLAY NOW ↗</span><span class="float-tag tag-two">LEVEL UP ✦</span>
+        <span class="spark spark-one">✦</span><span class="spark spark-two">✧</span>
+      </div>
+    </section>
+
+    <section class="section" id="games">
+      <div class="section-head"><div><span class="eyebrow">اختر تحديك</span><h2>الألعاب <span>المميزة</span></h2></div><div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="ابحث عن لعبة..." aria-label="ابحث عن لعبة"></div></div>
+      <div class="filters" role="group" aria-label="تصفية الألعاب">
+        <button class="filter active" data-filter="all">الكل</button><button class="filter" data-filter="skill">مهارة</button><button class="filter" data-filter="puzzle">ألغاز</button><button class="filter" data-filter="classic">كلاسيكية</button>
+      </div>
+      <div class="game-grid">
+        <article class="game-card" data-category="skill" data-name="اختبار سرعة النقر">
+          <div class="game-art art-click"><span class="art-symbol">⚡</span><span class="art-label">REACTION</span><span class="art-number">01</span></div>
+          <div class="card-body"><div class="card-meta"><span>مهارة</span><span>★ مميزة</span></div><h3>اختبار سرعة النقر</h3><p>كم مرة تستطيع النقر خلال عشر ثوانٍ؟</p><button class="play-btn" data-game="clicker">العب الآن <span>←</span></button></div>
+        </article>
+        <article class="game-card" data-category="puzzle" data-name="خمن الرقم">
+          <div class="game-art art-guess"><span class="art-symbol">?</span><span class="art-label">MIND GAME</span><span class="art-number">02</span></div>
+          <div class="card-body"><div class="card-meta"><span>ألغاز</span><span>تحدٍّ ذهني</span></div><h3>خمن الرقم</h3><p>هل تستطيع معرفة الرقم المخفي من 1 إلى 100؟</p><button class="play-btn" data-game="guess">العب الآن <span>←</span></button></div>
+        </article>
+        <article class="game-card" data-category="classic" data-name="إكس أو">
+          <div class="game-art art-tic"><span class="art-symbol">X <small>O</small></span><span class="art-label">CLASSIC</span><span class="art-number">03</span></div>
+          <div class="card-body"><div class="card-meta"><span>كلاسيكية</span><span>لاعب واحد</span></div><h3>إكس أو</h3><p>كوّن خطًا من ثلاث علامات لتفوز.</p><button class="play-btn" data-game="tic">العب الآن <span>←</span></button></div>
+        </article>
+      </div>
+      <p class="no-results" id="no-results" hidden>لم نجد ألعابًا بهذا الاسم. جرّب كلمة أخرى.</p>
+    </section>
+
+    <section class="promo" id="about"><div class="promo-icon">🚀</div><div><span class="eyebrow">المزيد قادم</span><h2>هذه مجرد البداية.</h2><p>يمكنك إضافة ألعاب جديدة وتطوير GameZone خطوة بخطوة.</p></div><a href="#games" class="outline-btn">جرّب الألعاب <span>↖</span></a></section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-icon">🎮</span> Game<span>Zone</span></a><p>صُنع بشغف للألعاب. © <span id="year"></span> GameZone</p><a href="#home">العودة للأعلى ↑</a></footer>
+
+  <div class="modal" id="game-modal" hidden>
+    <div class="modal-backdrop" data-close="true"></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close-modal" id="close-modal" aria-label="إغلاق">×</button>
+      <span class="eyebrow">منطقة اللعب</span><h2 id="modal-title">اللعبة</h2>
+      <div id="game-content"></div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
