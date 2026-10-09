@@ -120,3 +120,13 @@ function renderRPS() {
   $('#paper', content).onclick = () => play('ورقة');
   $('#scissors', content).onclick = () => play('مقص');
 }
+// أضف اسم اللعبة لقائمة الأسماء
+const names = {
+  clicker: 'اختبار سرعة النقر',
+  guess: 'خمن الرقم',
+  tic: 'إكس أو',
+  geometry: 'Geometry Dash' // 👈 اسم اللعبة الجديدة
+};
+
+// أضف الشرط لفتح اللعبة
+if(game === 'geometry') renderIframeGame('https://scratch.mit.edu/projects/105500895/embed');
