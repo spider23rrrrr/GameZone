@@ -130,3 +130,14 @@ const names = {
 
 // أضف الشرط لفتح اللعبة
 if(game === 'geometry') renderIframeGame('https://scratch.mit.edu/projects/105500895/embed');
+function renderIframeGame(gameUrl) {
+  content.innerHTML = `
+    <div class="game-ui" style="padding: 10px;">
+      <iframe 
+        src="${gameUrl}" 
+        style="width: 100%; height: 380px; border: none; border-radius: 10px;" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  `;
+}
