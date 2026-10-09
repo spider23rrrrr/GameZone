@@ -71,3 +71,8 @@ function renderTic(){
   function reset(){board=Array(9).fill('');turn='X';over=false;status.textContent='دور اللاعب X';draw()}
   $('#tic-reset',content).addEventListener('click',reset);draw();
 }
+// أضف اسم اللعبة للقائمة
+const names = {clicker:'اختبار سرعة النقر', guess:'خمن الرقم', tic:'إكس أو', rps:'حجر ورقة مقص'};
+
+// وأضف شرط تشغيل اللعبة
+if(game==='rps') renderRPS();
