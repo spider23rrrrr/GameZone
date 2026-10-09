@@ -76,3 +76,47 @@ const names = {clicker:'اختبار سرعة النقر', guess:'خمن الر�
 
 // وأضف شرط تشغيل اللعبة
 if(game==='rps') renderRPS();
+function renderRPS() {
+  content.innerHTML = `
+    <div class="game-ui">
+      <p>اختر إحدى الخيارات لمواجهة الكمبيوتر:</p>
+      <div style="font-size: 30px; margin: 15px 0;">
+        <button id="rock" style="font-size:24px;">🪨 حجر</button>
+        <button id="paper" style="font-size:24px;">📄 ورقة</button>
+        <button id="scissors" style="font-size:24px;">✂️ مقص</button>
+      </div>
+      <p class="status" id="rps-status">ابدأ اللعب!</p>
+      <p>النقاط - أنت: <b id="p-score">0</b> | الكمبيوتر: <b id="c-score">0</b></p>
+    </div>
+  `;
+
+  let pScore = 0, cScore = 0;
+  const choices = ['حجر', 'ورقة', 'مقص'];
+  const emojis = { 'حجر': '🪨', 'ورقة': '📄', 'مقص': '✂️' };
+
+  function play(playerChoice) {
+    const compChoice = choices[Math.floor(Math.random() * 3)];
+    const status = $('#rps-status', content);
+
+    if (playerChoice === compChoice) {
+      status.textContent = `تعادل! كلاهما اختار ${emojis[playerChoice]}`;
+    } else if (
+      (playerChoice === 'حجر' && compChoice === 'مقص') ||
+      (playerChoice === 'ورقة' && compChoice === 'حجر') ||
+      (playerChoice === 'مقص' && compChoice === 'ورقة')
+    ) {
+      pScore++;
+      status.textContent = `فزت! ${emojis[playerChoice]} يهزم ${emojis[compChoice]}`;
+    } else {
+      cScore++;
+      status.textContent = `خسرت! ${emojis[compChoice]} يهزم ${emojis[playerChoice]}`;
+    }
+
+    $('#p-score', content).textContent = pScore;
+    $('#c-score', content).textContent = cScore;
+  }
+
+  $('#rock', content).onclick = () => play('حجر');
+  $('#paper', content).onclick = () => play('ورقة');
+  $('#scissors', content).onclick = () => play('مقص');
+}
